@@ -14,7 +14,6 @@ config :simply_events_server, SimplyEventsServer.Endpoint,
   watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
                     cd: Path.expand("../", __DIR__)]]
 
-
 # Watch static and templates for browser reloading.
 config :simply_events_server, SimplyEventsServer.Endpoint,
   live_reload: [

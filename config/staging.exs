@@ -1,6 +1,6 @@
 use Mix.Config
 
-# For production, we configure the host to read the PORT
+# For staging, we configure the host to read the PORT
 # from the system environment. Therefore, you will need
 # to set PORT=80 before running your server.
 #
@@ -13,12 +13,12 @@ use Mix.Config
 # which you typically run after static files are built.
 config :simply_events_server, SimplyEventsServer.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [scheme: "https", host: "simply-events-server-prod.herokuapp.com", port: 443],
+  url: [scheme: "https", host: "simply-events-server-staging.herokuapp.com", port: 443],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
   cache_static_manifest: "priv/static/manifest.json",
   secret_key_base: System.get_env("SECRET_KEY_BASE")
 
-# Do not print debug messages in production
+# Do not print debug messages in staging
 config :logger, level: :info
 
 # ## SSL Support
